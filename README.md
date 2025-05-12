@@ -1,127 +1,118 @@
 Cistercian Numeral Converter
 
-Este projeto permite gerar e reconhecer numerais cistercienses de números arábicos (1–9999).
+Este projeto permite gerar e reconhecer numerais cistercienses a partir de números arábicos (1–9999).
 
-Estrutura do Projeto
+📂 Estrutura do Projeto
 
-├── .venv/                # Virtual environment
-├── samples/              # Imagens cistercienses de teste (geradas automaticamente)
-├── generator.py          # Função de geração de imagem + ROIs
-├── generate_samples.py   # Script para popular samples/ com imagens de exemplo
-├── recognize.py          # Reconhecimento de número a partir de imagem
-├── app.py                # Frontend Streamlit (gera e reconhece via Web UI)
-├── utils.py              # Utilitários (opcional)
-├── requirements.txt      # Dependências do projeto
-└── README.md             # Este arquivo
+├── .venv/                 # Ambiente virtual
+├── samples/               # Imagens de teste geradas automaticamente
+├── generator.py           # Geração de imagem e definição de ROIs
+├── generate_samples.py    # Script para popular a pasta samples/
+├── recognize.py           # Reconhecimento de numerais em imagens
+├── app.py                 # Frontend Streamlit (Geração e Reconhecimento via Web)
+├── utils.py               # Funções auxiliares (opcional)
+├── requirements.txt       # Dependências do projeto
+└── README.md              # Este arquivo
 
-Pré‑requisitos
+🚀 Pré‑requisitos
 
-Python 3.7+ instalado no sistema
+Python 3.7+
 
 pip (gerenciador de pacotes)
 
-virtualenv (recomendado para isolar dependências)
+virtualenv (recomendado)
 
-Instalação e Configuração
+💻 Instalação
 
 Clone o repositório:
+
+
 
 git clone <URL_DO_REPOSITÓRIO>
 cd <NOME_DO_PROJETO>
 
-Crie e ative o virtualenv:
 
-Windows (PowerShell):
-
+2. **Crie e ative o ambiente virtual**:
+   - **Windows (PowerShell)**:
+     ```powershell
 python -m venv .venv
-.\.venv\Scripts\activate
+.venv\Scripts\Activate
 
 Linux/macOS:
+
+
 
 python3 -m venv .venv
 source .venv/bin/activate
 
-Atualize o pip e instale dependências:
 
+3. **Atualize o pip e instale as dependências**:
+   ```bash
 pip install --upgrade pip
-pip install streamlit opencv-python numpy pandas matplotlib
+pip install -r requirements.txt
 
-Ambiente headless (servidor): use opencv-python-headless em vez de opencv-python:
+Caso execute em servidor/headless, substitua opencv-python por opencv-python-headless no requirements.txt.
 
-pip install streamlit opencv-python-headless numpy pandas matplotlib
+🎨 Gerando Imagens de Teste
 
-(Opcional) Gere o requirements.txt:
-
-pip freeze > requirements.txt
-
-Gerando Imagens de Teste
-
-Use o script generate_samples.py para popular a pasta samples/:
+Para popular a pasta samples/ com numerais cistercienses:
 
 python generate_samples.py
 
-Este comando gerará arquivos como:
+Isso criará arquivos como:
 
- samples/1.png
- samples/5.png
- samples/10.png
- samples/42.png
- samples/1992.png
- samples/2023.png
- samples/9999.png
+samples/1.png
+samples/42.png
+samples/1992.png
+... e assim por diante.
 
-Para gerar números personalizados, passe-os como argumentos:
+Para números específicos:
 
 python generate_samples.py 314 159 26
 
-Interface Web (Streamlit)
+🌐 Interface Web (Streamlit)
 
-Execute o frontend via Streamlit para gerar e reconhecer diretamente no navegador:
+Execute o frontend para gerar e reconhecer numerais via navegador:
 
 streamlit run app.py
 # ou
 python -m streamlit run app.py
 
-No navegador, a aplicação oferecerá:
+Funcionalidades
 
-Geração: insira um número (1–9999) e visualize o numeral cisterciense ao lado do arábico.
+Geração: Insira um número (1–9999) e visualize o numeral cisterciense.
 
-Reconhecimento: selecione uma imagem de samples/ e veja o número reconhecido + bounding‑boxes.
+Reconhecimento: Selecione uma imagem de samples/ para obter o valor arábico e as caixas delimitadoras (ROIs).
 
-Reconhecimento via CLI
-
-Para reconhecer imagens via linha de comando:
+🔍 Reconhecimento via CLI
 
 python recognize.py
 
-Siga o prompt:
-
 Escolha o índice da imagem em samples/.
 
-O script imprimirá no console:
+O script exibirá no console:
 
 Número reconhecido
 
-Lista de bounding‑boxes
+Lista de bounding boxes (ROIs)
 
 Será aberta uma janela (OpenCV) com a imagem destacada.
 
-Se estiver usando opencv-python-headless, substitua o bloco cv2.imshow(...) no final de recognize.py por um snippet Matplotlib:
+Dica: Se usar opencv-python-headless, substitua o bloco cv2.imshow(...) por:
 
 import matplotlib.pyplot as plt
 plt.imshow(color[:, :, ::-1])  # BGR → RGB
 plt.axis('off')
 plt.show()
 
-Módulos Principais
+🛠️ Módulos Principais
 
-generator.py: define generate_cistercian_image(number, cell_size, margin) → retorna (img, rois).
+generator.py: Define generate_cistercian_image(number, cell_size, margin) → (img, rois)
 
-generate_samples.py: usa generator.py para criar imagens em samples/.
+generate_samples.py: Popula samples/ chamando generator.py
 
-recognize.py: importa generate_cistercian_image para fazer template‑matching e reconhecer números.
+recognize.py: Realiza template matching para reconhecer números
 
-app.py: frontend com Streamlit (gera e reconhece em Web UI).
+app.py: Frontend em Streamlit
 
-utils.py: funções auxiliares (opcional).
-
+utils.py: Funções utilitárias (configuração, logging, etc.)
