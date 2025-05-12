@@ -14,7 +14,7 @@ Estrutura do Projeto
 ├── requirements.txt      # Dependências do projeto
 └── README.md             # Este arquivo
 
-🛠️ Pré‑requisitos
+Pré‑requisitos
 
 Python 3.7+ instalado no sistema
 
