@@ -29,20 +29,18 @@ Clone o repositório:
 git clone <URL_DO_REPOSITÓRIO>
 cd <NOME_DO_PROJETO>
 
-2. **Crie e ative o ambiente virtual**:
+2. **Crie e ative o ambiente virtual**
    - **Windows (PowerShell)**
 python -m venv .venv
 .venv\Scripts\Activate
 
 Linux/macOS:
 
-
-
 python3 -m venv .venv
 source .venv/bin/activate
 
 
-3. **Atualize o pip e instale as dependências**:
+3. **Atualize o pip e instale as dependências**
    ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
