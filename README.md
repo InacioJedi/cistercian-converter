@@ -58,10 +58,10 @@ Para popular a pasta samples/ com numerais cistercienses:
 
 Isso criará arquivos como:
 
-samples/1.png
-samples/42.png
-samples/1992.png
-... e assim por diante.
+samples/1.png   
+samples/42.png   
+samples/1992.png   
+... e assim por diante.   
 
 Para números específicos:
 
