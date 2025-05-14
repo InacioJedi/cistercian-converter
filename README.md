@@ -4,15 +4,15 @@ Este projeto permite gerar e reconhecer numerais cistercienses a partir de núme
 
 📂 Estrutura do Projeto
 
-├── .venv/                 # Ambiente virtual
-├── samples/               # Imagens de teste geradas automaticamente
-├── generator.py           # Geração de imagem e definição de ROIs
-├── generate_samples.py    # Script para popular a pasta samples/
-├── recognize.py           # Reconhecimento de numerais em imagens
-├── app.py                 # Frontend Streamlit (Geração e Reconhecimento via Web)
-├── utils.py               # Funções auxiliares (opcional)
-├── requirements.txt       # Dependências do projeto
-└── README.md              # Este arquivo
+.venv/                 # Ambiente virtual
+samples/               # Imagens de teste geradas automaticamente
+generator.py           # Geração de imagem e definição de ROIs
+generate_samples.py    # Script para popular a pasta samples/
+recognize.py           # Reconhecimento de numerais em imagens
+app.py                 # Frontend Streamlit (Geração e Reconhecimento via Web)
+utils.py               # Funções auxiliares
+requirements.txt       # Dependências do projeto
+README.md              # Este arquivo
 
 🚀 Pré‑requisitos
 
@@ -20,7 +20,7 @@ Python 3.7+
 
 pip (gerenciador de pacotes)
 
-virtualenv (recomendado)
+virtualenv
 
 💻 Instalação
 
@@ -30,20 +30,22 @@ git clone <URL_DO_REPOSITÓRIO>
 cd <NOME_DO_PROJETO>
 
 2. **Crie e ative o ambiente virtual**
-
-python -m venv .venv
-.venv\Scripts\Activate
+Criar
+# python -m venv .venv
+Ativar
+# .venv\Scripts\Activate
 
 Linux/macOS:
-
-python3 -m venv .venv
-source .venv/bin/activate
+Criar
+# python3 -m venv .venv
+Ativar
+# source .venv/bin/activate
 
 
 3. **Atualize o pip e instale as dependências**
 
-pip install --upgrade pip
-pip install -r requirements.txt
+# pip install --upgrade pip
+# pip install -r requirements.txt
 
 Caso execute em servidor/headless, substitua opencv-python por opencv-python-headless no requirements.txt.
 
@@ -51,7 +53,7 @@ Caso execute em servidor/headless, substitua opencv-python por opencv-python-hea
 
 Para popular a pasta samples/ com numerais cistercienses:
 
-python generate_samples.py
+# python generate_samples.py
 
 Isso criará arquivos como:
 
@@ -62,15 +64,15 @@ samples/1992.png
 
 Para números específicos:
 
-python generate_samples.py 314 159 26
+# python generate_samples.py 314 159 26
 
 🌐 Interface Web (Streamlit)
 
 Execute o frontend para gerar e reconhecer numerais via navegador:
 
-streamlit run app.py
-# ou
-python -m streamlit run app.py
+# streamlit run app.py
+ou
+# python -m streamlit run app.py
 
 Funcionalidades
 
@@ -80,7 +82,7 @@ Reconhecimento: Selecione uma imagem de samples/ para obter o valor arábico e a
 
 🔍 Reconhecimento via CLI
 
-python recognize.py
+# python recognize.py
 
 Escolha o índice da imagem em samples/.
 
