@@ -30,6 +30,7 @@ git clone <URL_DO_REPOSITÓRIO>
 cd <NOME_DO_PROJETO>
 
 2. **Crie e ative o ambiente virtual**
+   
 Criar
 # python -m venv .venv
 Ativar
