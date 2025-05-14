@@ -95,12 +95,6 @@ Lista de bounding boxes (ROIs)
 
 Será aberta uma janela (OpenCV) com a imagem destacada.
 
-Dica: Se usar opencv-python-headless, substitua o bloco cv2.imshow(...) por:
-
-import matplotlib.pyplot as plt
-plt.imshow(color[:, :, ::-1])  # BGR → RGB
-plt.axis('off')
-plt.show()
 
 🛠️ Módulos Principais
 
