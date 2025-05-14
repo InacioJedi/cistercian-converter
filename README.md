@@ -26,11 +26,8 @@ virtualenv (recomendado)
 
 Clone o repositório:
 
-
-
 git clone <URL_DO_REPOSITÓRIO>
 cd <NOME_DO_PROJETO>
-
 
 2. **Crie e ative o ambiente virtual**:
    - **Windows (PowerShell)**:
