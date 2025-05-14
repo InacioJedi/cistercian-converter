@@ -30,8 +30,7 @@ git clone <URL_DO_REPOSITÓRIO>
 cd <NOME_DO_PROJETO>
 
 2. **Crie e ative o ambiente virtual**:
-   - **Windows (PowerShell)**:
-     ```powershell
+   - **Windows (PowerShell)**
 python -m venv .venv
 .venv\Scripts\Activate
 
