@@ -31,6 +31,7 @@ cd <NOME_DO_PROJETO>
 
 2. **Crie e ative o ambiente virtual**
    - **Windows (PowerShell)**
+
 python -m venv .venv
 .venv\Scripts\Activate
 
@@ -41,7 +42,7 @@ source .venv/bin/activate
 
 
 3. **Atualize o pip e instale as dependências**
-   ```bash
+
 pip install --upgrade pip
 pip install -r requirements.txt
 
